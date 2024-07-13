@@ -1,34 +1,41 @@
-import express from 'express'
-import dotenv from 'dotenv'
-dotenv.config()
-import mongoose from 'mongoose'
-import cors from 'cors'
+import express from "express";
+import dotenv from "dotenv";
+dotenv.config();
+import mongoose from "mongoose";
+import cors from "cors";
+import { postLogin, postSignup } from "./controllers/User.js";
+import { postTransaction } from "./controllers/Transaction.js";
 
-const app = express()
-app.use(express.json())
-app.use(cors())
+const app = express();
+app.use(express.json());
+app.use(cors());
 
 //Connect to db
-const connectDb = async()=>{
-    const conn = await mongoose.connect(process.env.MONGODB_URI)
+const connectDb = async () => {
+  const conn = await mongoose.connect(process.env.MONGODB_URI);
 
-    if(conn){
-        console.log("Db connected 🚀");
-    }
-    else{
-        console.log("Db not connected ❌");
-    }
+  if (conn) {
+    console.log("Db connected 🚀");
+  } else {
+    console.log("Db not connected ❌");
+  }
 };
-connectDb()
+connectDb();
 
-const PORT = process.env.PORT || 5000
+const PORT = process.env.PORT || 5000;
 
-app.get('/', (req, res)=>{
-    res.json({
-        message: `Welcome to expense tracker`
-    })
-})
+app.get("/health", (req, res) => {
+  res.json({
+    message: `Server is running`,
+  });
+});
 
-app.listen(PORT, ()=>{
-    console.log(`Server is runnig on ${PORT}`);
-})
+app.post("/signup", postSignup);
+
+app.post("/login", postLogin)
+
+app.post("/transaction", postTransaction)
+
+app.listen(PORT, () => {
+  console.log(`Server is runnig on ${PORT}`);
+});
