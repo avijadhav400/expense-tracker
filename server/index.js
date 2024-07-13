@@ -10,7 +10,7 @@ app.use(cors())
 
 //Connect to db
 const connectDb = async()=>{
-    const conn = await mongoose.connect("mongodb+srv://avinashjadhav:avinashjadhav@avinash23.sifln8v.mongodb.net/expense-tracker")
+    const conn = await mongoose.connect(process.env.MONGODB_URI)
 
     if(conn){
         console.log("Db connected 🚀");
