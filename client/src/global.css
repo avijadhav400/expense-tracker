@@ -1,0 +1,28 @@
+.user-input{
+    display: block;
+    width: 100%;
+    margin: 10px auto;
+    height: 30px;
+    font-size: 16px;
+    background-color: #99ffff;
+}
+
+.user-input:focus, .user-input:active{
+    outline: none;
+}
+
+.auth-btn{
+    display: block;
+    margin: 0px auto;
+    padding: 10px 20px;
+    border: none;
+    background-color: black;
+    color: white;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.form-heading{
+    text-align: center;
+    font-size: 25px;
+}

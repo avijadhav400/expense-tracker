@@ -1,0 +1,12 @@
+
+
+.signup-form{
+    background-color: #ccffff;
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 270px;
+    display: block;
+    margin: 20px auto;
+    padding: 20px;
+}
+
