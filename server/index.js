@@ -4,7 +4,7 @@ dotenv.config();
 import mongoose from "mongoose";
 import cors from "cors";
 import { postLogin, postSignup } from "./controllers/User.js";
-import { postTransaction } from "./controllers/Transaction.js";
+import { getTransactions, postTransaction } from "./controllers/Transaction.js";
 
 const app = express();
 app.use(express.json());
@@ -36,6 +36,8 @@ app.post("/login", postLogin)
 
 app.post("/transaction", postTransaction)
 
+app.get("/transactions", getTransactions)
+
 app.listen(PORT, () => {
-  console.log(`Server is runnig on ${PORT}`);
+  console.log(`Server is running on ${PORT}`);
 });

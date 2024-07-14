@@ -1,4 +1,5 @@
 import Transaction from "../models/Transaction.js";
+import User from "../models/User.js";
 
 const postTransaction = async (req, res) => {
   const { title, amount, category, type, user } = req.body;
@@ -28,4 +29,35 @@ const postTransaction = async (req, res) => {
   }
 };
 
-export {postTransaction}
+const getTransactions = async (req, res) => {
+  const { userId } = req.query;
+
+  const user = await User.findById(userId);
+  if (!user) {
+    return res.json({
+      success: false,
+      message: "User not found",
+      data: null,
+    });
+  }
+  try {
+    const transactions = await Transaction.find({ user: userId });
+
+    res.json({
+      success: true,
+      message: transactions
+        ? "Transactions fetched successfully"
+        : "Transaction not found",
+      data: transactions,
+    });
+  }
+   catch (e) {
+    res.json({
+      success: false,
+      message: e.message,
+      data: null,
+    });
+  }
+};
+
+export { postTransaction, getTransactions };
