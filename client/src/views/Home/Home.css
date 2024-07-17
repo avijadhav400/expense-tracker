@@ -1,0 +1,74 @@
+.home-heading{
+    font-size: 23px;
+    margin: 10px;  
+}
+
+.home-greeting{
+    font-size: 25px;
+    margin: 10px;
+}
+
+.home-logout{
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.main-div-transaction-calculator{
+    display: flex;
+    justify-content: space-around;
+}
+
+.transactions-calculator{
+    border: 1px solid black;
+    padding: 15px 30px;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.net-income-amount{
+    font-size: 20px;
+    color: green;
+    font-weight: bold;
+    text-align: center;
+
+}
+
+.net-expense-amount{
+    color: red;
+    font-size: 20px;
+    font-weight: bold; 
+    text-align: center;
+
+}
+
+.net-total-balance{
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold; 
+}
+
+
+
+.transactions-container{
+    max-height: 400px;
+    overflow-y: scroll;
+}
+
+.add-wallet-img{
+    height: 50px;
+    width: 50px;
+    position: fixed;
+    right: 30px;
+    cursor: pointer;
+    bottom: 20px;
+}
+
+.add-wallet-img:hover{
+    transition: 0.3s;
+    background-color: rgb(150, 215, 240);
+    border-radius: 15px;
+}

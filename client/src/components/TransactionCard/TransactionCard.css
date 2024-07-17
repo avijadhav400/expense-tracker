@@ -1,0 +1,36 @@
+.transaction-card {
+  border: 1px solid black;
+  margin: 20px;
+  padding: 10px;
+  border-radius: 5px;
+  position: relative;
+}
+
+.transaction-card-amount {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.transaction-card-category{
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    padding: 5px 10px;
+    border-radius: 25px;
+    /* color: white; */
+    background-color: #62e6e6;
+}
+
+.delete-transaction-btn{
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 5px 8px;
+  border-radius: 10px;
+  margin-left: 30px;
+  font-size: 12px;
+  cursor: pointer;
+}

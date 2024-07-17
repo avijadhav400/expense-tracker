@@ -4,7 +4,8 @@ dotenv.config();
 import mongoose from "mongoose";
 import cors from "cors";
 import { postLogin, postSignup } from "./controllers/User.js";
-import { getTransactions, postTransaction } from "./controllers/Transaction.js";
+import { getTransactions, postTransaction, deleteTransaction } from "./controllers/Transaction.js";
+import getHealth from "./controllers/Health.js";
 
 const app = express();
 app.use(express.json());
@@ -24,11 +25,7 @@ connectDb();
 
 const PORT = process.env.PORT || 5000;
 
-app.get("/health", (req, res) => {
-  res.json({
-    message: `Server is running`,
-  });
-});
+app.get("/health", getHealth);
 
 app.post("/signup", postSignup);
 
@@ -37,6 +34,8 @@ app.post("/login", postLogin)
 app.post("/transaction", postTransaction)
 
 app.get("/transactions", getTransactions)
+
+app.delete('/transaction/:id', deleteTransaction)
 
 app.listen(PORT, () => {
   console.log(`Server is running on ${PORT}`);
