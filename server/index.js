@@ -25,13 +25,13 @@ connectDb();
 
 const PORT = process.env.PORT || 5000;
 
-app.use("*", getHealth);
+app.use("/*", getHealth);
 
 app.post("/signup", postSignup);
 
 app.post("/login", postLogin)
 
-app.post("/transaction", postTransaction)
+app.post("/transaction", postTransaction) 
 
 app.get("/transactions", getTransactions)
 
