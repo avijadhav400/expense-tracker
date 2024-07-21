@@ -21,6 +21,7 @@ function AddTransaction() {
   }, []);
 
   const addTransaction = async () => {
+    toast.loading("Adding Transaction...")
     const response = await axios.post(
       `${process.env.REACT_APP_API_URL}/transaction`,
       {
@@ -31,6 +32,7 @@ function AddTransaction() {
         user: user._id,
       }
     );
+    toast.dismiss()
     toast.success(response.data.message);
     setTitle("");
     setAmount("");
