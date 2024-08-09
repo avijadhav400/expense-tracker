@@ -77,6 +77,7 @@ function Home() {
         </div>
       </div>
 
+
       <span
         className="home-logout"
         onClick={() => {

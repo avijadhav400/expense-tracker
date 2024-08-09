@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import {json, Link} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 import toast, {Toaster} from 'react-hot-toast'
 import "./Login.css";
 
